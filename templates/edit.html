@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+<!--title-->
+{% block head %} 
+    <title>Edit Post</title>
+{% endblock %}
+
+<!--body-->
+{% block body %}
+
+    <h2>Edit your post:</h2>
+    <form action='/posts/edit/{{ posts.id}}' method='POST'>
+        Title: <input type='text' name='title' id='title' value='{{ posts.title }}'><br>
+        Post: <input type='text' name='content' id='content' value='{{ posts.content }}'><br>
+        Author: <input type='text' name='author' id='author' value='{{ posts.author }}'><br>
+        <input type='submit' value='Save'>
+    </form>
+    <hr>
+
+{% endblock %}
